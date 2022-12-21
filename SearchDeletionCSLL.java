@@ -1,3 +1,4 @@
+//Wap to implement search and deletion operation in CSLL
 class Node {
   int data;
   Node next;
@@ -127,7 +128,7 @@ class LinkedList{
   }
 
   //Search an element in the list
-  void SearchElement(int searchValue) {
+  void Search(int searchValue) {
     Node temp = new Node();
     temp = this.head;
     int found = 0;
@@ -178,14 +179,10 @@ public class SearchDeletionCSLL {
     LinkedList MyList = new LinkedList();
  
     //Add three elements at the start of the list.
-    MyList.InsertFirst(10);
-    MyList.InsertFirst(20);
     MyList.InsertFirst(30);
  
 //Add three elements at the end of the list.
     MyList.InsertLast(10);
-    MyList.InsertLast(20);
-    MyList.InsertLast(30);
     MyList.Display();
  
     //Insert an element at position 2
@@ -196,9 +193,9 @@ public class SearchDeletionCSLL {
     MyList.Delete(2);
     MyList.Display();
 
-    //Delete an element at position 1
-    MyList.Delete(1);
-    MyList.Display();
+    //search for element in the list
+    MyList.Search(10);
+    MyList.Search(15);
  
   }
 }
