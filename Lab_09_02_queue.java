@@ -1,3 +1,5 @@
+import java.util.Queue;
+
 class CreateQueue {
     static final int max = 10;
     int front;
@@ -14,7 +16,7 @@ class CreateQueue {
     
         boolean isEmpty()
         {
-            if(rear == front)
+            if(front == -1)
             {
                 return true;
             }
@@ -27,6 +29,10 @@ class CreateQueue {
     //method to add new element
     void Enqueue(int x)
     {
+        if(isEmpty())
+        {
+            front = 0;
+        }
         if(rear == (max - 1))
         {
             System.out.println("Queue is full.");
@@ -34,8 +40,67 @@ class CreateQueue {
         else
         {
             queue[++rear] = x;
-            System.out.println(x + " is added in the queue.");
+            // System.out.println(x + " is added in the queue.");
         }
+        
+    }
+
+    void Dequeue()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Queue is empty.");
+        }
+        else
+        {
+            ++front;
+        }
+    }
+
+    void Search(int key)
+    {
+        boolean flag = false;
+        if(isEmpty())
+        {
+            System.out.println("Queue is empty.");
+        }
+        else 
+        {
+            for(int i = front; i <= rear ; i++)
+            {
+                if(queue[i] == key)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if(flag)
+            {
+                System.out.println(key + " found");
+            }
+            else
+            {
+                System.out.println(key + " not found.");
+            }
+        }
+        
+    }
+
+    void Display()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Queue is empty.");
+        }
+        else 
+        {
+            for(int i = front; i <= rear ; i++ )
+            {
+                System.out.println(queue[i] + " ");
+            }
+        }
+        
     }
 }
 
@@ -47,6 +112,9 @@ public class Lab_09_02_queue
         Queue.Enqueue(2);
         Queue.Enqueue(3);
         Queue.Enqueue(5);
+
+        Queue.Search(3);
+        Queue.Display();
     }
 }
 
