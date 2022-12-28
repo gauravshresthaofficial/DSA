@@ -99,7 +99,7 @@ class CreateStack {
 
 }
 
-public class Lab_09_stack {
+public class Lab_09_01_stack {
     public static void main (String[] args)
     {
         CreateStack stack = new CreateStack();
