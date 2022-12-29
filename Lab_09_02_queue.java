@@ -16,7 +16,7 @@ class CreateQueue {
     
         boolean isEmpty()
         {
-            if(front == -1)
+            if(front == -1 && rear == -1)
             {
                 return true;
             }
@@ -29,18 +29,16 @@ class CreateQueue {
     //method to add new element
     void Enqueue(int x)
     {
-        if(isEmpty())
+        if(rear == max -1)
         {
-            front = 0;
+            System.out.println("\nQueue is full");
         }
-        if(rear == (max - 1))
-        {
-            System.out.println("Queue is full.");
-        }
-        else
-        {
-            queue[++rear] = x;
-            // System.out.println(x + " is added in the queue.");
+        else if(front == -1 && rear == -1){
+            front = rear = 0;
+            queue[rear] = x;
+        } else{
+            rear++;
+            queue[rear] = x;
         }
         
     }
@@ -49,11 +47,12 @@ class CreateQueue {
     {
         if(isEmpty())
         {
-            System.out.println("Queue is empty.");
+            System.out.println("\n" + "Queue is empty.");
         }
-        else
-        {
-            ++front;
+        else if (front == rear){
+            front = rear = -1;
+        } else {
+            front++;
         }
     }
 
@@ -62,11 +61,12 @@ class CreateQueue {
         boolean flag = false;
         if(isEmpty())
         {
-            System.out.println("Queue is empty.");
+            System.out.println("\n" + "Queue is empty.");
         }
         else 
         {
-            for(int i = front; i <= rear ; i++)
+            int i;
+            for(i = front; i <= rear ; i++)
             {
                 if(queue[i] == key)
                 {
@@ -77,11 +77,11 @@ class CreateQueue {
 
             if(flag)
             {
-                System.out.println(key + " found");
+                System.out.println("\n" + key + " found at " + (i+1) + " position.");
             }
             else
             {
-                System.out.println(key + " not found.");
+                System.out.println("\n" + key + " not found.");
             }
         }
         
@@ -91,13 +91,13 @@ class CreateQueue {
     {
         if(isEmpty())
         {
-            System.out.println("Queue is empty.");
+            System.out.println("\n" + "Queue is empty.");
         }
         else 
         {
             for(int i = front; i <= rear ; i++ )
             {
-                System.out.println(queue[i] + " ");
+                System.out.print(queue[i] + " ");
             }
         }
         
@@ -112,8 +112,12 @@ public class Lab_09_02_queue
         Queue.Enqueue(2);
         Queue.Enqueue(3);
         Queue.Enqueue(5);
+        Queue.Display();
 
         Queue.Search(3);
+        
+        Queue.Dequeue();
+        Queue.Dequeue();
         Queue.Display();
     }
 }
