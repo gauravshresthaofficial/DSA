@@ -51,8 +51,11 @@ class CreateQueue {
         }
         else if (front == rear){
             front = rear = -1;
+            System.out.println("Queue is empty.");
         } else {
+            int x = queue[front];
             front++;
+            System.out.println(x + " is deleted from the queue.");
         }
     }
 
