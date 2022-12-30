@@ -20,7 +20,7 @@ class CreateStack {
   }
 
     void push(int x)
-    {
+    {   
         if(top == (max - 1))
         {
             System.out.println("Stack size limit reached.");

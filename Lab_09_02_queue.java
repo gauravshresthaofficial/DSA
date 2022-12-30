@@ -112,14 +112,13 @@ public class Lab_09_02_queue
     public static void main(String[] args) {
         CreateQueue Queue = new CreateQueue();
         
-        Queue.Enqueue(2);
         Queue.Enqueue(3);
-        Queue.Enqueue(5);
+        Queue.Enqueue(1);
+        Queue.Enqueue(2);
         Queue.Display();
 
-        Queue.Search(3);
+        Queue.Search(5);
         
-        Queue.Dequeue();
         Queue.Dequeue();
         Queue.Display();
     }

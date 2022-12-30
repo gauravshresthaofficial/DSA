@@ -1,31 +1,5 @@
 //Wap to implement push() and pop() operations in stack.
 
-// A Push operation may involve the following steps −
-// Step 1 − Checks if the stack is full.
-
-// Step 2 − If the stack is full, produces an error and exit.
-
-// Step 3 − If the stack is not full, increments top to point next empty space.
-
-// Step 4 − Adds data element to the stack location, where top is pointing.
-
-// Step 5 − Returns success.
-
-
-
-
-// A Pop operation may involve the following steps −
-
-// Step 1 − Checks if the stack is empty.
-
-// Step 2 − If the stack is empty, produces an error and exit.
-
-// Step 3 − If the stack is not empty, accesses the data element at which top is pointing.
-
-// Step 4 − Decreases the value of top by 1.
-
-// Step 5 − Returns success.
-
 class CreateStack {
     static final int max = 10;
     int top;
